@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Home, Building2, Info, Phone } from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Home, Building2, Info, Phone } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<'fr' | 'en'>('fr');
+  const [language, setLanguage] = useState<"fr" | "en">("fr");
 
   useEffect(() => {
     // Client-side only: prevent hydration mismatch
@@ -17,15 +17,15 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 20);
     };
     handleScroll(); // Check initial scroll position
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Accueil', href: '#home', icon: Home },
-    { name: 'Propriétés', href: '#properties', icon: Building2 },
-    { name: 'À Propos', href: '#about', icon: Info },
-    { name: 'Contact', href: '#contact', icon: Phone },
+    { name: "Accueil", href: "#home", icon: Home },
+    { name: "Propriétés", href: "#properties", icon: Building2 },
+    { name: "À Propos", href: "#about", icon: Info },
+    { name: "Contact", href: "#contact", icon: Phone },
   ];
 
   return (
@@ -35,8 +35,8 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/45 backdrop-blur-md shadow-lg'
-          : 'bg-transparent/95 backdrop-blur-md'
+          ? "bg-white/45 backdrop-blur-md shadow-lg"
+          : "bg-transparent/95 backdrop-blur-md"
       }`}
       suppressHydrationWarning
     >
@@ -58,9 +58,11 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <span className={`text-2xl font-bold transition-colors duration-300 ${
-                isScrolled ? 'text-[#1a4d3e]' : 'text-white'
-              }`}>
+              <span
+                className={`text-2xl font-bold transition-colors duration-300 ${
+                  isScrolled ? "text-[#1a4d3e]" : "text-white"
+                }`}
+              >
                 Solutions of Africa Développement
               </span>
             </Link>
@@ -78,52 +80,75 @@ export default function Navbar() {
                 whileHover={{ y: -2 }}
                 className={`font-medium transition-colors flex items-center gap-2 px-2 shrink-0 ${
                   isScrolled
-                    ? 'text-[#1a4d3e] hover:text-[#2d7a5f]'
-                    : 'text-white hover:text-gray-200'
+                    ? "text-[#1a4d3e] hover:text-[#2d7a5f]"
+                    : "text-white hover:text-gray-200"
                 }`}
               >
                 <item.icon size={18} />
-                <span className="text-base lg:text-lg whitespace-nowrap">{item.name}</span>
+                <span className="text-base lg:text-lg whitespace-nowrap">
+                  {item.name}
+                </span>
               </motion.a>
             ))}
-            <div className={`flex items-center gap-2 border-l pl-4 ml-2 shrink-0 transition-colors duration-300 ${
-              isScrolled ? 'border-[#1a4d3e]/20' : 'border-white/20'
-            }`}>
+            <div
+              className={`flex items-center gap-2 border-l pl-4 ml-2 shrink-0 transition-colors duration-300 ${
+                isScrolled ? "border-[#1a4d3e]/20" : "border-white/20"
+              }`}
+            >
               <motion.button
-                onClick={() => setLanguage('fr')}
+                whileHover={{ scale: 1.05 }}
+                onClick={() => {
+                  // Smooth scroll to #properties anchor
+                  const target = document.querySelector('#properties');
+                  if (target) {
+                    const offset = 96; // navbar offset height
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-3 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap bg-orange-800 text-white shadow-md hover:bg-orange-900`}
+                style={{ paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.75rem', paddingBottom: '0.75rem', marginLeft: '1rem' }}
+              >
+                A Vendre
+              </motion.button>
+              <motion.button
+                onClick={() => setLanguage("fr")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap  ${
-                  language === 'fr'
+                  language === "fr"
                     ? isScrolled
-                      ? 'bg-[#1a4d3e] text-white shadow-md p-5'
-                      : 'bg-white/20 text-white shadow-md backdrop-blur-sm p-5'
+                      ? "bg-[#1a4d3e] text-white shadow-md p-5"
+                      : "bg-white/20 text-white shadow-md backdrop-blur-sm p-5"
                     : isScrolled
-                      ? 'text-[#1a4d3e] hover:bg-[#1a4d3e]/10 p-5'
-                      : 'text-white hover:bg-white/10 p-5'
+                    ? "text-[#1a4d3e] hover:bg-[#1a4d3e]/10 p-5"
+                    : "text-white hover:bg-white/10 p-5"
                 }`}
               >
                 FR
               </motion.button>
               <motion.button
-                onClick={() => setLanguage('en')}
+                onClick={() => setLanguage("en")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-8 py-1.5 mr-6 lg:mr-8 rounded-md text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                  language === 'en'
+                  language === "en"
                     ? isScrolled
-                      ? 'bg-[#1a4d3e] text-white shadow-md p-5'
-                      : 'bg-white/20 text-white shadow-md backdrop-blur-sm p-5'
+                      ? "bg-[#1a4d3e] text-white shadow-md p-5"
+                      : "bg-white/20 text-white shadow-md backdrop-blur-sm p-5"
                     : isScrolled
-                      ? 'text-[#1a4d3e] hover:bg-[#1a4d3e]/10 p-5'
-                      : 'text-white hover:bg-white/10 p-5'
+                    ? "text-[#1a4d3e] hover:bg-[#1a4d3e]/10 p-5"
+                    : "text-white hover:bg-white/10 p-5"
                 }`}
               >
                 EN
               </motion.button>
-              <div className=' pl-4 ml-2 shrink-0'>
-
-              </div>
+              <div className=" pl-4 ml-2 shrink-0"></div>
             </div>
           </div>
 
@@ -131,7 +156,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden p-2 transition-colors duration-300 ${
-              isScrolled ? 'text-[#1a4d3e]' : 'text-white'
+              isScrolled ? "text-[#1a4d3e]" : "text-white"
             }`}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -144,7 +169,7 @@ export default function Navbar() {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-gray-200"
           >
@@ -161,31 +186,38 @@ export default function Navbar() {
                   <span>{item.name}</span>
                 </motion.a>
               ))}
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                className="w-full rounded-md text-sm font-medium transition-all duration-300 bg-amber-600 text-white shadow-md hover:bg-amber-800 mt-4"
+                style={{ paddingLeft: '1rem', paddingRight: '1rem', paddingTop: '0.75rem', paddingBottom: '0.75rem' }}
+              >
+                A Vendre
+              </motion.button>
               <div className="flex items-center gap-2 pt-4 border-t border-gray-200 mt-4">
                 <motion.button
                   onClick={() => {
-                    setLanguage('fr');
+                    setLanguage("fr");
                     setIsMobileMenuOpen(false);
                   }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex-1 ${
-                    language === 'fr'
-                      ? 'bg-[#1a4d3e] text-white shadow-md'
-                      : 'text-[#1a4d3e] bg-gray-100 hover:bg-[#1a4d3e]/10'
+                    language === "fr"
+                      ? "bg-[#1a4d3e] text-white shadow-md"
+                      : "text-[#1a4d3e] bg-gray-100 hover:bg-[#1a4d3e]/10"
                   }`}
                 >
                   Français
                 </motion.button>
                 <motion.button
                   onClick={() => {
-                    setLanguage('en');
+                    setLanguage("en");
                     setIsMobileMenuOpen(false);
                   }}
                   whileTap={{ scale: 0.95 }}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 flex-1 ${
-                    language === 'en'
-                      ? 'bg-[#1a4d3e] text-white shadow-md'
-                      : 'text-[#1a4d3e] bg-gray-100 hover:bg-[#1a4d3e]/10'
+                    language === "en"
+                      ? "bg-[#1a4d3e] text-white shadow-md"
+                      : "text-[#1a4d3e] bg-gray-100 hover:bg-[#1a4d3e]/10"
                   }`}
                 >
                   English
@@ -198,4 +230,3 @@ export default function Navbar() {
     </motion.nav>
   );
 }
-

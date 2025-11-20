@@ -6,6 +6,39 @@ import PropertyCard from './PropertyCard';
 const properties = [
   {
     id: 1,
+    title: 'Immeuble Moderne de Luxe',
+    location: 'Abidjan, Côte d\'Ivoire',
+    price: '2,500,000 MAD',
+    image: '/vente1.jpg',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 350,
+    type: 'Immeuble',
+  },
+  {
+    id: 2,
+    title: 'Villa Moderne de Luxe',
+    location: 'Abidjan, Côte d\'Ivoire',
+    price: '2,500,000 MAD',
+    image: '/vente2.jpg',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 400,
+    type: 'Villa',
+  },
+  {
+    id: 3,
+    title: 'Villa Moderne de Luxe',
+    location: 'Abidjan, Côte d\'Ivoire',
+    price: '2,500,000 MAD',
+    image: '/vente3.jpg',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 400,
+    type: 'Villa',
+  },
+  {
+    id: 4,
     title: 'Villa Moderne de Luxe',
     location: 'Casablanca, Maroc',
     price: '2,500,000 MAD',
@@ -16,7 +49,7 @@ const properties = [
     type: 'Villa',
   },
   {
-    id: 2,
+    id: 5,
     title: 'Appartement Élégant',
     location: 'Dakar, Sénégal',
     price: '850,000 XOF',
@@ -27,7 +60,7 @@ const properties = [
     type: 'Appartement',
   },
   {
-    id: 3,
+    id: 6,
     title: 'Maison Familiale Spacieuse',
     location: 'Abidjan, Côte d\'Ivoire',
     price: '1,200,000 XOF',
@@ -38,7 +71,7 @@ const properties = [
     type: 'Maison',
   },
   {
-    id: 4,
+    id: 7,
     title: 'Penthouse avec Vue Panoramique',
     location: 'Lagos, Nigeria',
     price: '3,500,000 NGN',
@@ -49,7 +82,7 @@ const properties = [
     type: 'Penthouse',
   },
   {
-    id: 5,
+    id: 8,
     title: 'Villa Contemporaine',
     location: 'Tunis, Tunisie',
     price: '1,800,000 TND',
@@ -60,7 +93,7 @@ const properties = [
     type: 'Villa',
   },
   {
-    id: 6,
+    id: 9,
     title: 'Studio Moderne',
     location: 'Casablanca, Maroc',
     price: '450,000 MAD',
@@ -93,7 +126,7 @@ const PropertiesSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-400 mb-6"
           >
-            Propriétés en Vedette
+            Propriétés en Vente
           </motion.h2>
           
           <motion.p
@@ -103,7 +136,7 @@ const PropertiesSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-base  text-white max-w-3xl mx-auto leading-relaxed"
           >
-            Découvrez notre sélection de propriétés d&apos;exception à travers l&apos;Afrique.
+            Découvrez nos propriétés d&apos;exception en vente à travers le pays et l&apos;Afrique.
             Chaque bien a été soigneusement sélectionné pour sa qualité et son emplacement privilégié.
           </motion.p>
         </motion.div>

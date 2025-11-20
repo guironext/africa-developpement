@@ -11,7 +11,6 @@ const slides = [
     title: 'Nous concretisons votre Rêve Immobilier en Afrique',
     subtitle: 'Découvrez des propriétés d\'exception',
     description: 'Des villas de luxe aux appartements modernes, trouvez la propriété parfaite',
-    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80',
     cta: 'Explorer les Propriétés',
   },
   {
@@ -19,7 +18,6 @@ const slides = [
     title: 'Faites des Investissements Immobiliers Intelligents',
     subtitle: 'Croissance et Opportunités',
     description: 'Investissez dans l\'immobilier africain avec des rendements exceptionnels',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80',
     cta: 'En Savoir Plus',
   },
   {
@@ -27,20 +25,17 @@ const slides = [
     title: 'Expertise et Confiance dans le Marché Immobilier Africain',
     subtitle: 'Votre Partenaire Immobilier',
     description: 'Plus de 10 ans d\'expérience dans le marché immobilier africain',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80',
     cta: 'Nous Contacter',
   },
 ];
 
 export default function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [direction, setDirection] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
       if (!isAnimating) {
-        setDirection(1);
         setCurrentSlide((prev) => (prev + 1) % slides.length);
       }
     }, 6000);
@@ -48,27 +43,9 @@ export default function HeroSlider() {
     return () => clearInterval(timer);
   }, [isAnimating]);
 
-  const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? '100%' : '-100%',
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? '100%' : '-100%',
-      opacity: 0,
-    }),
-  };
-
   const goToSlide = (index: number) => {
     if (index === currentSlide || isAnimating) return;
     setIsAnimating(true);
-    setDirection(index > currentSlide ? 1 : -1);
     setCurrentSlide(index);
     setTimeout(() => setIsAnimating(false), 800);
   };
@@ -76,7 +53,6 @@ export default function HeroSlider() {
   const nextSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setDirection(1);
     setCurrentSlide((prev) => (prev + 1) % slides.length);
     setTimeout(() => setIsAnimating(false), 800);
   };
@@ -84,37 +60,25 @@ export default function HeroSlider() {
   const prevSlide = () => {
     if (isAnimating) return;
     setIsAnimating(true);
-    setDirection(-1);
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     setTimeout(() => setIsAnimating(false), 800);
   };
 
   return (
     <section id="home" className="relative h-screen overflow-hidden mb-20 md:mb-24">
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={currentSlide}
-          custom={direction}
-          variants={slideVariants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: 'tween', duration: 0.6, ease: 'easeInOut' },
-            opacity: { duration: 0.4 },
-          }}
-          className="absolute inset-0"
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <div className="relative w-full h-full">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slides[currentSlide].image})` }}
-            >
-              <div className="absolute inset-0 bg-linear-to-r from-[#1a4d3e]/90 via-[#1a4d3e]/70 to-transparent" />
-            </div>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+          <source src="/solution-africa.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-linear-to-r from-[#1a4d3e]/90 via-[#1a4d3e]/70 to-transparent" />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex items-center justify-center">
@@ -187,7 +151,6 @@ export default function HeroSlider() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-end">
               {/* Search Input */}
               <div className="md:col-span-5 px-4">
-                
                 <div className="relative flex items-center bg-gray-50/80 hover:bg-gray-50 rounded-xl border border-gray-200/60 focus-within:border-[#1a4d3e]/40 focus-within:ring-2 focus-within:ring-[#1a4d3e]/10 transition-all duration-300 pl-4 pr-4 py-3.5">
                   <Search className="text-[#1a4d3e] shrink-0 mr-3" size={20} strokeWidth={2.5} />
                   <input
@@ -200,7 +163,6 @@ export default function HeroSlider() {
 
               {/* Location Select */}
               <div className="md:col-span-4">
-                
                 <div className="relative flex items-center bg-gray-50/80 hover:bg-gray-50 rounded-xl border border-gray-200/60 focus-within:border-[#1a4d3e]/40 focus-within:ring-2 focus-within:ring-[#1a4d3e]/10 transition-all duration-300 pl-4 pr-4 py-3.5">
                   <MapPin className="text-[#1a4d3e] shrink-0 mr-3" size={20} strokeWidth={2.5} />
                   <select 
@@ -261,4 +223,3 @@ export default function HeroSlider() {
     </section>
   );
 }
-
