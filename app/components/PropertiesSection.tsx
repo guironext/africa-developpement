@@ -6,68 +6,68 @@ import PropertyCard from './PropertyCard';
 const properties = [
   {
     id: 1,
-    title: 'Immeuble Moderne de Luxe',
+    title: 'Appartement Luxueux Centre-Ville',
     location: 'Abidjan, Côte d\'Ivoire',
-    price: '2,500,000 MAD',
-    image: '/vente1.jpg',
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 350,
-    type: 'Immeuble',
-  },
-  {
-    id: 2,
-    title: 'Villa Moderne de Luxe',
-    location: 'Abidjan, Côte d\'Ivoire',
-    price: '2,500,000 MAD',
-    image: '/vente2.jpg',
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 400,
-    type: 'Villa',
-  },
-  {
-    id: 3,
-    title: 'Villa Moderne de Luxe',
-    location: 'Abidjan, Côte d\'Ivoire',
-    price: '2,500,000 MAD',
-    image: '/vente3.jpg',
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 400,
-    type: 'Villa',
-  },
-  {
-    id: 4,
-    title: 'Villa Moderne de Luxe',
-    location: 'Casablanca, Maroc',
-    price: '2,500,000 MAD',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 350,
-    type: 'Villa',
-  },
-  {
-    id: 5,
-    title: 'Appartement Élégant',
-    location: 'Dakar, Sénégal',
-    price: '850,000 XOF',
-    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80',
-    bedrooms: 3,
+    price: '85,000,000 XOF',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    bedrooms: 2,
     bathrooms: 2,
     area: 120,
     type: 'Appartement',
   },
   {
-    id: 6,
-    title: 'Maison Familiale Spacieuse',
-    location: 'Abidjan, Côte d\'Ivoire',
-    price: '1,200,000 XOF',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    id: 2,
+    title: 'Maison Familiale avec Jardin',
+    location: 'Dakar, Sénégal',
+    price: '120,000,000 XOF',
+    image: 'https://images.unsplash.com/photo-1600585152915-d208bec867a1?w=800&q=80',
     bedrooms: 5,
     bathrooms: 4,
     area: 280,
+    type: 'Maison',
+  },
+  {
+    id: 3,
+    title: 'Duplex Élégant',
+    location: 'Nairobi, Kenya',
+    price: '45,000,000 KES',
+    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 180,
+    type: 'Duplex',
+  },
+  {
+    id: 4,
+    title: 'Villa de Prestige',
+    location: 'Le Cap, Afrique du Sud',
+    price: '8,500,000 ZAR',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
+    bedrooms: 6,
+    bathrooms: 5,
+    area: 450,
+    type: 'Villa',
+  },
+  {
+    id: 5,
+    title: 'Appartement Moderne',
+    location: 'Accra, Ghana',
+    price: '350,000 GHS',
+    image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80',
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 95,
+    type: 'Appartement',
+  },
+  {
+    id: 6,
+    title: 'Maison Traditionnelle Rénovée',
+    location: 'Kigali, Rwanda',
+    price: '180,000,000 RWF',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+    bedrooms: 4,
+    bathrooms: 3,
+    area: 220,
     type: 'Maison',
   },
   {
@@ -103,6 +103,39 @@ const properties = [
     area: 45,
     type: 'Studio',
   },
+  {
+    id: 10,
+    title: 'Appartement avec Terrasse',
+    location: 'Douala, Cameroun',
+    price: '65,000,000 XAF',
+    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+    bedrooms: 3,
+    bathrooms: 2,
+    area: 140,
+    type: 'Appartement',
+  },
+  {
+    id: 11,
+    title: 'Villa de Plage',
+    location: 'Zanzibar, Tanzanie',
+    price: '2,200,000 USD',
+    image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+    bedrooms: 5,
+    bathrooms: 4,
+    area: 380,
+    type: 'Villa',
+  },
+  {
+    id: 12,
+    title: 'Loft Industriel',
+    location: 'Johannesburg, Afrique du Sud',
+    price: '2,800,000 ZAR',
+    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
+    bedrooms: 2,
+    bathrooms: 2,
+    area: 160,
+    type: 'Loft',
+  },
 ];
 
 const PropertiesSection = () => {
@@ -126,7 +159,7 @@ const PropertiesSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-orange-400 mb-6"
           >
-            Propriétés en Vente
+            Propriétés en Gérance
           </motion.h2>
           
           <motion.p
@@ -134,10 +167,10 @@ const PropertiesSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-base  text-white max-w-3xl mx-auto leading-relaxed"
+            className="text-base text-white max-w-3xl mx-auto leading-relaxed"
           >
-            Découvrez nos propriétés d&apos;exception en vente à travers le pays et l&apos;Afrique.
-            Chaque bien a été soigneusement sélectionné pour sa qualité et son emplacement privilégié.
+            Découvrez nos propriétés en gérance à travers la Côte d&apos;Ivoire et l&apos;Afrique.
+           Le nombre  et la qualité des biens que nous gérons témoigne de la confiance que nos mandants placent en nous.
           </motion.p>
         </motion.div>
 
@@ -149,29 +182,7 @@ const PropertiesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-16 md:mt-20"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-white font-semibold px-10 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
-            style={{ background: 'linear-gradient(to right, #1a4d3e, #2d7a5f)', padding: '8px 16px'  }}
-          
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #2d7a5f, #1a4d3e)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #1a4d3e, #2d7a5f)';
-            }}
-          >
-            Voir Toutes les Propriétés
-          </motion.button>
-        </motion.div>
+       
       </div>
     </section>
   );

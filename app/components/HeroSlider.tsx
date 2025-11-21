@@ -75,9 +75,9 @@ export default function HeroSlider() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/solution-africa.mp4" type="video/mp4" />
+          <source src="/video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-linear-to-r from-[#1a4d3e]/90 via-[#1a4d3e]/70 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#1a4d3e]/60 via-[#1a4d3e]/50 to-transparent" />
       </div>
 
       {/* Content */}

@@ -90,7 +90,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section id="home" className="relative h-screen overflow-hidden mb-20 md:mb-24">
+    <section id="home" className="relative h-[75vh] overflow-hidden mb-20 md:mb-24">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={currentSlide}
@@ -105,7 +105,7 @@ export default function HeroSlider() {
           }}
           className="absolute inset-0"
         >
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-[75vh]">
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slides[currentSlide].image})` }}

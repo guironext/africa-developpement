@@ -136,29 +136,7 @@ export default function ServicesSection() {
         </div>
 
         {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-16 md:mt-20"
-        >
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative inline-flex items-center gap-3 text-white font-semibold px-8 md:px-12 py-4 md:py-5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-base md:text-lg overflow-hidden"
-            style={{ background: 'linear-gradient(to right, #1a4d3e, #2d7a5f)', marginBottom: '50px', marginTop: '50px' }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #2d7a5f, #1a4d3e)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(to right, #1a4d3e, #2d7a5f)';
-            }}
-          >
-            <span className='text-xl' style={{ marginBottom: '20px', marginTop: '20px', padding: '8px 16px'}}>Découvrir tous nos services</span>
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </motion.button>
-        </motion.div>
+        
         <div style={{ height: '20px', marginBottom: '10px' }} ></div>
       </div>
     </section>

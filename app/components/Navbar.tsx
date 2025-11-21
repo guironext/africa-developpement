@@ -23,8 +23,8 @@ export default function Navbar() {
 
   const navItems = [
     { name: "Accueil", href: "#home", icon: Home },
-    { name: "Propriétés", href: "#properties", icon: Building2 },
     { name: "À Propos", href: "#about", icon: Info },
+    { name: "Propriétés", href: "#properties", icon: Building2 },
     { name: "Contact", href: "#contact", icon: Phone },
   ];
 
@@ -58,6 +58,7 @@ export default function Navbar() {
                   priority
                 />
               </div>
+              <div className="flex flex-col items-center justify-center">
               <span
                 className={`text-2xl font-bold transition-colors duration-300 ${
                   isScrolled ? "text-[#1a4d3e]" : "text-white"
@@ -65,6 +66,11 @@ export default function Navbar() {
               >
                 Solutions of Africa Développement
               </span>
+              <span className="text-sm text-orange-950 font-bold">
+                Construction - Location & Gérance - Achat & Vente
+              </span>
+                
+              </div>
             </Link>
           </motion.div>
 

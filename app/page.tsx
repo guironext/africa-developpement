@@ -8,6 +8,7 @@ import ServicesSection from './components/ServicesSection';
 import AboutSection from './components/AboutSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
+import PropertiesSectionVente from './components/PropertiesSectionVente';
 
 export default function Home() {
   useEffect(() => {
@@ -53,19 +54,33 @@ export default function Home() {
       </div>
       <div style={{ height: '80px' }} className="w-full bg-linear-to-b from-gray-800 to-gray-900"></div>
       <div className="w-full flex flex-col gap-y-20 relative">
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(26,77,62,0.1),transparent_50%)] pointer-events-none"></div>
+
+        
+
         <section id="properties" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
-        <PropertiesSection />
+        <PropertiesSectionVente />
         </section>
-        <section id="services" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
-        <ServicesSection />
-        </section>
+
         <section id="about" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
         <AboutSection />
         </section>
+
+        <section id="services" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
+        <ServicesSection />
+        </section>
+
+        <section id="properties" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
+        <PropertiesSection />
+        </section>
+        
+       
+
         <section id="contact" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-gray-800 to-gray-900 relative z-10 py-8">
         <ContactSection />
         </section>
+
         <section id="footer" className="w-full flex flex-col bg-linear-to-b from-gray-900 via-black to-black relative z-10">
         <Footer />
         </section>
