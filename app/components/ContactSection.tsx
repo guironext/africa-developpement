@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Send, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,28 +19,12 @@ export default function ContactSection() {
     console.log('Form submitted:', formData);
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      content: 'contact@solutionsafrica.com',
-      link: 'mailto:contact@solutionsafrica.com',
-      color: 'from-[#1a4d3e] to-[#2d7a5f]',
-    },
-    {
-      icon: Phone,
-      title: 'Téléphone',
-      content: '+212 6XX XXX XXX',
-      link: 'tel:+2126XXXXXXXX',
-      color: 'from-[#2d7a5f] to-[#1a4d3e]',
-    },
-    {
-      icon: MapPin,
-      title: 'Adresse',
-      content: 'Casablanca, Maroc',
-      link: '#',
-      color: 'from-[#1a4d3e] to-[#2d7a5f]',
-    },
+  const cardImages = [
+    '/card/6.png',
+    '/card/7.png',
+    '/card/8.png',
+    '/card/4.png',
+    '/card/5.png',
   ];
 
   return (
@@ -87,46 +72,31 @@ export default function ContactSection() {
             transition={{ duration: 0.6 }}
             className="space-y-6 w-full"
           >
-            {contactInfo.map((info, index) => (
-              <motion.a
-                key={info.title}
-                href={info.link}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative block"
-                style={{ marginBottom: '20px', marginTop: '20px' }}
-              >
-                <div className={`relative bg-linear-to-br ${info.color} p-8 rounded-3xl text-white shadow-xl hover:shadow-2xl transition-all duration-500 border border-white/10 overflow-hidden`}
-                style={{ padding: '20px' }}
+            {/* Card Images Column */}
+            <div className="grid grid-cols-1  gap-6 items-center">
+              {cardImages.map((imagePath, index) => (
+                <motion.div
+                  key={imagePath}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="relative w-full max-w-sm rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 bg-white/5 backdrop-blur-sm border border-white/10"
+                  
                 >
-                  {/* Decorative Gradient Overlay */}
-                  <div className="absolute inset-0 bg-linear-to-br from-white/0 via-white/0 to-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" ></div>
-                  
-                  <div className="relative z-10 items-center flex  space-x-6">
-                    <motion.div
-                      whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
-                      className="shrink-0 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 group-hover:bg-white/20 transition-all duration-300"
-                      
-                    >
-                      <info.icon size={28} className="text-[#d4af37 ]" strokeWidth={2}  />
-                    </motion.div>
-                    <div className="flex-1" style={{ padding: '10px' }}>
-                      <h3 className="font-bold text-xl mb-2 group-hover:text-[#d4af37] transition-colors duration-300">
-                        {info.title}
-                      </h3>
-                      <p className="text-gray-100 text-lg opacity-90">{info.content}</p>
-                    </div>
+                  <div className="relative w-full aspect-4/3">
+                    <Image
+                      src={imagePath}
+                      alt={`Card ${index + 4}`}
+                      fill
+                      className="object-fill"
+                      sizes=" 100vw, 100%"
+                    />
                   </div>
-                  
-                  {/* Corner Decoration */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-linear-to-br from-[#d4af37]/20 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-              </motion.a>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
 
           {/* Contact Form */}
