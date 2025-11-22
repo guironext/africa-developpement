@@ -123,6 +123,7 @@ export default function HeroSlider() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="flex justify-center items-center mt-2.5 px-2"
+                style={{ padding: '10px' }}
               >
                 <Button
                   type="button"
@@ -150,7 +151,7 @@ export default function HeroSlider() {
           <div className="bg-white/98 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-6 md:p-8 lg:p-10">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 items-end">
               {/* Search Input */}
-              <div className="md:col-span-5 px-4">
+              <div className="md:col-span-5 px-4" style={{ padding: '10px' }}>
                 <div className="relative flex items-center bg-gray-50/80 hover:bg-gray-50 rounded-xl border border-gray-200/60 focus-within:border-[#1a4d3e]/40 focus-within:ring-2 focus-within:ring-[#1a4d3e]/10 transition-all duration-300 pl-4 pr-4 py-3.5">
                   <Search className="text-[#1a4d3e] shrink-0 mr-3" size={20} strokeWidth={2.5} />
                   <input
@@ -162,7 +163,7 @@ export default function HeroSlider() {
               </div>
 
               {/* Location Select */}
-              <div className="md:col-span-4">
+              <div className="md:col-span-4 "style={{ padding: '10px' }}>
                 <div className="relative flex items-center bg-gray-50/80 hover:bg-gray-50 rounded-xl border border-gray-200/60 focus-within:border-[#1a4d3e]/40 focus-within:ring-2 focus-within:ring-[#1a4d3e]/10 transition-all duration-300 pl-4 pr-4 py-3.5">
                   <MapPin className="text-[#1a4d3e] shrink-0 mr-3" size={20} strokeWidth={2.5} />
                   <select 
@@ -178,7 +179,7 @@ export default function HeroSlider() {
               </div>
 
               {/* Search Button */}
-              <div className="md:col-span-3">
+              <div className="md:col-span-3" style={{ padding: '10px' }}>
                 <Button
                   type="button"
                   className="w-full bg-[#1a4d3e] hover:bg-[#2d7a5f] text-white font-semibold px-4 md:px-6 py-3.5 md:py-4 rounded-xl text-base md:text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] h-auto"

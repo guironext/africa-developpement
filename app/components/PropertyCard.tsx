@@ -1,8 +1,10 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
-import { Bed, Bath, Square, MapPin, ArrowRight, Heart } from 'lucide-react';
+import { Bed, Bath, Square, MapPin, ArrowRight, Heart, Images } from 'lucide-react';
 import { useState } from 'react';
+import ImageSlideshowDialog from './ImageSlideshowDialog';
 
 interface Property {
   id: number;
@@ -14,6 +16,9 @@ interface Property {
   bathrooms: number;
   area: number;
   type: string;
+  picIn?: {
+    image: string;
+  }[];
 }
 
 interface PropertyCardProps {
@@ -23,6 +28,9 @@ interface PropertyCardProps {
 
 export default function PropertyCard({ property, index }: PropertyCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isSlideshowOpen, setIsSlideshowOpen] = useState(false);
+  
+  const hasImages = property.picIn && property.picIn.length > 0;
 
   return (
     <motion.div
@@ -116,8 +124,34 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
               <span className="text-sm font-semibold">{property.area}m²</span>
             </motion.div>
           </div>
+          <div className="flex items-center gap-2">
+           
+            {hasImages && (
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setIsSlideshowOpen(true)}
+                className="flex items-center gap-2 px-4 py-2 bg-[#bb5c18] text-white rounded-lg hover:bg-[#eabf83] transition-colors shadow-md"
+                aria-label="View images"
+                style={{ cursor: 'pointer', transition: 'all 0.3s ease', padding: '10px' }}
+              >
+                <Images size={18} />
+                <span className="text-sm font-medium">Galerie</span>
+              </motion.button>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* Image Slideshow Dialog */}
+      {hasImages && property.picIn && (
+        <ImageSlideshowDialog
+          images={property.picIn}
+          isOpen={isSlideshowOpen}
+          onClose={() => setIsSlideshowOpen(false)}
+          initialIndex={0}
+        />
+      )}
     </motion.div>
   );
 }

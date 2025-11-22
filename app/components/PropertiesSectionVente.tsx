@@ -7,13 +7,15 @@ const properties = [
   {
     id: 1,
     title: 'Immeuble Moderne de Luxe',
-    location: 'Abidjan, Côte d\'Ivoire',
+    location: 'Zone 4, Abidjan',
     price: '2,500,000 MAD',
     image: '/vente1.jpg',
     bedrooms: 4,
     bathrooms: 3,
     area: 350,
     type: 'Immeuble',
+    picIn:[
+    ]
   },
   {
     id: 2,
@@ -25,39 +27,133 @@ const properties = [
     bathrooms: 3,
     area: 400,
     type: 'Villa',
+    picIn:[
+    ]
   },
   {
     id: 3,
     title: 'Villa Moderne de Luxe',
     location: 'Abidjan, Côte d\'Ivoire',
     price: '2,500,000 MAD',
-    image: '/vente3.jpg',
+    image: '/villa2/pic1.jpg',
     bedrooms: 4,
     bathrooms: 3,
     area: 400,
     type: 'Villa',
+    picIn:[
+      {
+        image: '/villa2/pic1.jpg',
+      },
+      {
+        image: '/villa2/pic2.jpg',
+      },
+      {
+        image: '/villa2/pic3.jpg',
+      },
+      {
+        image: '/villa2/pic4.jpg',
+      },
+      {
+        image: '/villa2/pic5.jpg',
+      },
+      {
+        image: '/villa2/pic6.jpg',
+      },
+      {
+        image: '/villa2/pic7.jpg',
+      },
+      {
+        image: '/villa2/pic8.jpg',
+      },
+      {
+        image: '/villa2/pic9.jpg',
+      },
+      {
+        image: '/villa2/pic10.jpg',
+      },
+      {
+        image: '/villa2/pic11.jpg',
+      },
+      {
+        image: '/villa2/pic12.jpg',
+      },
+      {
+        image: '/villa2/pic13.jpg',
+      },
+      {
+        image: '/villa2/pic14.jpg',
+      },
+      {
+        image: '/villa2/pic15.jpg',
+      },
+      {
+        image: '/villa2/pic16.jpg',
+      },
+      {
+        image: '/villa2/pic17.jpg',
+      },
+      
+    ]
   },
   {
     id: 4,
-    title: 'Villa Moderne de Luxe',
-    location: 'Zone 4, Marcory',
+    title: 'Immeubles Modernes de Luxe',
+    location: 'Zone 4, Abidjan',
     price: '2,500,000 MAD',
-    image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=800&q=80',
+    image: '/imm.jpg',
     bedrooms: 4,
     bathrooms: 3,
     area: 350,
-    type: 'Villa',
+    type: 'Immeuble',
+    picIn:[
+    ]
   },
   {
     id: 5,
-    title: 'Appartement Élégant',
-    location: 'Palmeraie, Abidjan',
+    title: 'Villa Élégant',
+    location: 'Abidjan, Côte d\'Ivoire',
     price: '850,000 XOF',
-    image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80',
+    image: '/villa1/pic1.jpg',
     bedrooms: 3,
     bathrooms: 2,
     area: 120,
-    type: 'Appartement',
+    type: 'Villa',
+    picIn:[
+      {
+        image: '/villa1/pic1.jpg',
+      },
+      {
+        image: '/villa1/pic2.jpg',
+      },
+      {
+        image: '/villa1/pic3.jpg',
+      },
+      {
+        image: '/villa1/pic4.jpg',
+      },
+      {
+        image: '/villa1/pic5.jpg',
+      },
+      {
+        image: '/villa1/pic6.jpg',
+      },
+      {
+          image: '/villa1/pic7.jpg',
+      },
+      {
+        image: '/villa1/pic8.jpg',
+      },
+      {
+        image: '/villa1/pic9.jpg',
+      },
+      {
+        image: '/villa1/pic10.jpg',
+      },
+      {
+        image: '/villa1/pic11.jpg',
+      },
+    
+    ]
   },
   {
     id: 6,
@@ -69,6 +165,8 @@ const properties = [
     bathrooms: 4,
     area: 280,
     type: 'Maison',
+    picIn:[
+    ]
   },
 
 ];

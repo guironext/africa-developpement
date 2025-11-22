@@ -14,6 +14,7 @@ const properties = [
     bathrooms: 2,
     area: 120,
     type: 'Appartement',
+    picIn:[],
   },
   {
     id: 2,
@@ -25,6 +26,7 @@ const properties = [
     bathrooms: 4,
     area: 280,
     type: 'Maison',
+    picIn:[],
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ const properties = [
     bathrooms: 2,
     area: 180,
     type: 'Duplex',
+    picIn:[],
   },
   {
     id: 4,
@@ -47,6 +50,7 @@ const properties = [
     bathrooms: 5,
     area: 450,
     type: 'Villa',
+    picIn:[],
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ const properties = [
     bathrooms: 2,
     area: 95,
     type: 'Appartement',
+    picIn:[],
   },
   {
     id: 6,
@@ -69,6 +74,7 @@ const properties = [
     bathrooms: 3,
     area: 220,
     type: 'Maison',
+    picIn:[],
   },
   {
     id: 7,
@@ -78,19 +84,21 @@ const properties = [
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
     bedrooms: 3,
     bathrooms: 3,
-    area: 200,
+    area: 300,
     type: 'Penthouse',
+    picIn:[],
   },
   {
     id: 8,
     title: 'Villa Contemporaine',
-    location: 'Tunis, Tunisie',
+    location: 'Ouaga, Burkina Faso',
     price: '1,800,000 TND',
     image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
     bedrooms: 4,
     bathrooms: 3,
     area: 320,
     type: 'Villa',
+    picIn:[],
   },
   {
     id: 9,
@@ -102,6 +110,7 @@ const properties = [
     bathrooms: 1,
     area: 45,
     type: 'Studio',
+    picIn:[],
   },
   {
     id: 10,
@@ -113,6 +122,7 @@ const properties = [
     bathrooms: 2,
     area: 140,
     type: 'Appartement',
+    picIn:[],
   },
   {
     id: 11,
@@ -124,6 +134,7 @@ const properties = [
     bathrooms: 4,
     area: 380,
     type: 'Villa',
+    picIn:[],
   },
   {
     id: 12,
@@ -135,6 +146,7 @@ const properties = [
     bathrooms: 2,
     area: 160,
     type: 'Loft',
+    picIn:[],
   },
 ];
 
